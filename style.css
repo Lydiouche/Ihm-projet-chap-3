@@ -1,0 +1,847 @@
+/* CSS des pages du site CliquéMangé */
+
+/*************************En-tête de toutes les pages************************/
+header {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid black; 
+  box-sizing: border-box; /* Inclut la bordure dans le calcul de la largeur totale */
+}
+
+.nav-left, .nav-right {
+  display: flex;
+}
+
+.nav-left {
+  justify-content: flex-start;
+  margin-right: auto; /*nav-left est collé à gauche */
+}
+
+.nav-right {
+  justify-content: flex-end;
+  margin-left: auto; /*nav-right est collé à droite */
+}
+
+.nav-button {
+  text-align: center;
+  padding: 15px;
+  margin: 0; /* Supprimez les marges pour éviter les espaces */
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.nav-left .nav-button {
+  border-right: 2px solid black; /* Bordure à droite pour les boutons de gauche */
+}
+
+.nav-right .nav-button {
+  border-left: 2px solid black; /* Bordure à gauche pour les boutons de droite */
+}
+
+.nav-button:hover {
+  background-color: #28a745;
+}
+
+
+/***********************************************************home page**********************************************/
+.container_page {
+  display: flex; /*permet de gérer plus facilement l'alignement*/
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.descriptif_page {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 50px; 
+  width: 100%; /*le conteneur prend toute la largeur */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu horizontalement */
+}
+
+.descriptif_page h2 {
+  font-size: 2em; /* Augmentez la taille de la police */
+  font-weight: bold; /* Mettez le texte en gras */
+}
+
+.description {
+  font-size: 150%;
+  padding: 20px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre */
+  margin-bottom: 20px; 
+  margin-left: 20px; 
+}
+
+.bottom-container-page {
+  display: flex;
+  justify-content: space-between; /* Espace entre les deux sections du conteneur flex*/
+  width: 100%;
+}
+
+.formules {
+  margin-top: 20px;
+  width: 45%; /* Ajustez la largeur selon vos besoins */
+  text-align: center; /* Centre le texte à l'intérieur du bloc */
+}
+
+
+.formules h2 {
+  font-size: 2em; /* Augmentez la taille de la police */
+  font-weight: bold; /* Mettez le texte en gras */
+  margin-right: 250px; 
+}
+
+.formules ul {
+  display: inline-block; /* Centre la liste */
+  text-align: left;
+  margin-right: 150px;
+}
+
+.formules ul li {
+  font-size: 1.5em; 
+  margin-bottom: 10px; 
+}
+
+.buttons_link_formules {
+  padding: 30px; /* Espacement interne */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+  margin-right: 120px;
+}
+
+.buttons_link_formules a {
+  display: inline-block; /* Affiche les liens en ligne */
+  transition: transform 0.3s ease-in-out; /* Ajoute une transition pour l'effet de survol */
+}
+
+.buttons_link_formules a:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'élément (de 20%) lorsqu'on passe la souris dessus, */
+}
+
+.menu-items {
+  width: 100%;
+}
+
+.suggestions {
+  margin-top: 20px; 
+  width: 45%; /* Ajustez la largeur selon vos besoins */
+}
+
+.suggestions h2 {
+  font-size: 2em; 
+  font-weight: bold; 
+  margin-left: 320px; 
+}
+
+.suggestions .buttons {
+  display: flex;
+  justify-content: space-around; /* Alignez les boutons sur la même ligne */
+  margin-top: 20px; 
+  gap: 5px; /* Ajoutez un espace entre les boutons */
+  margin-bottom: 20px; 
+  margin-right: 25px;
+}
+
+.suggestions .buttons button {
+  font-size: 1.5em; 
+  padding: 50px 50px; /* Augmentez le padding pour rendre les boutons plus gros */
+  margin: 10px; /* Ajoutez une marge entre les boutons */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Ajoute une transition fluide de 0,3 seconde pour le changement de couleur de fond*/
+  border-radius: 10px; /* Ajoutez des angles arrondis */
+  border: 1px solid #ccc; /* Ajoutez une bordure légère */
+}
+
+.suggestions .buttons button:hover {
+  background-color: #d7d7d7;
+}
+
+.suggestions .menu-item {
+  flex: 0 1 calc(25% - 20px); /* Définit la flexibilité de l'élément :
+  - 0 : L'élément ne grandit pas au-delà de sa taille calculée.
+  - 1 : L'élément peut rétrécir si nécessaire.
+  - calc(25% - 20px) : La largeur de l'élément est calculée comme 25% de la largeur du conteneur, moins 20px pour l'espacement. */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);/* Ajoute une ombre légère autour de l'élément :
+  - 0 : Pas de décalage horizontal.
+  - 2px : Décalage vertical de 2 pixels.
+  - 4px : Flou de l'ombre.
+  - rgba(0, 0, 0, 0.1) : Couleur noire avec une opacité de 10% pour un effet subtil. */
+  margin-bottom: 20px;
+}
+.suggestions .item-photo {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.suggestions .item-photo img {
+  max-width: 100%; /* Limite la largeur de l'image à 100% de son conteneur pour éviter qu'elle ne déborde */
+  max-height: 100%;/* Limite la hauteur de l'image à 100% de son conteneur pour éviter qu'elle ne déborde */
+  object-fit: cover;  object-fit: cover; /* Ajuste l'image pour qu'elle remplisse le conteneur tout en conservant ses proportions,*/
+}
+.suggestions .item-info p {
+  margin: 5px 0; /* Ajoute une marge verticale de 5px en haut et en bas, et aucune marge horizontale */
+  font-size: 14px; /* Définit la taille de la police à 14px pour un texte lisible et compact */
+}
+
+
+/******container pour descriptif********/
+.container h2, .container h3 {
+  margin-bottom: 10px;
+}
+
+.container p {
+  width: 50%;
+  text-align: center;
+}
+
+footer {
+text-align: center;
+background-color: #28a745;
+font-family:'Courier New';
+color:white;
+}
+
+main {
+background-color: #c4ffbc;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat; /* Empêche l'image de se répéter, elle est affichée une seule fois */
+}
+
+
+/* Styles pour le header (gif) */
+.header-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+}
+
+.gif-left, .gif-right {
+flex: 1;
+display: flex;
+justify-content: center;
+}
+
+.header-container a {
+flex: 1;
+display: flex;
+justify-content: center;
+}
+
+.header-container img {
+max-width: 100%;
+height: auto;
+}
+
+/***********************************Les hyperliens du header***********************************/
+a {
+color: inherit; /* Utilise la couleur du texte environnant */
+text-decoration: none; /* Supprime le soulignement */
+}
+
+a:hover {
+color: inherit; /* Garde la couleur du texte environnant au survol */
+text-decoration: none; /* Supprime le soulignement au survol */
+}
+
+
+/******************************page connexion qui s'ouvre quand clique mon compte****************/
+.modal-toggle {
+display: none;
+}
+
+.modal {
+display: none; /* Cache la modal par défaut */
+position: fixed;
+z-index: 1000; /* Place la modal au-dessus des autres éléments */
+top: 0;
+width: 100%; /* La modal occupe toute la largeur de la fenêtre */
+height: 100%; /* La modal occupe toute la hauteur de la fenêtre */
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+background-color: #fff;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+max-width: 400px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+color: black;
+text-decoration: none; /* Supprime le soulignement des liens*/
+}
+
+#signup-modal-toggle:checked ~ #signup-modal,
+#login-modal-toggle:checked ~ #login-modal {
+display: block;
+}
+/******************************page inscription qui s'ouvre quand clique mon compte****************/
+.signup-link {
+color: #07a73f;
+cursor: pointer;
+text-decoration: underline; /* Ajoute un soulignement au texte*/
+}
+
+.signup-link:hover {
+color: #07a73f;
+}
+
+/*********************************** Page de connexion ***************************************************/
+
+.main-container {
+display: flex;
+justify-content: center;
+align-items: flex-start; 
+gap: 50px; 
+padding: 20px;
+}
+
+.connexion, .creation-compte {
+border: 1px solid #ccc;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre douce autour de l'élément :
+- 0 : Pas de décalage horizontal.
+- 0 : Pas de décalage vertical.
+- 10px : Rayon de flou pour l'ombre.
+- rgba(0, 0, 0, 0.1) : Couleur noire avec une opacité de 10% pour un effet subtil. */
+background-color: #fff;
+width: 300px; /* Fixed width for sections */
+}
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+label, input, button {
+margin-bottom: 10px;
+}
+
+
+/*********************************** Page de carte ***************************************************/
+
+.button-filtre {
+float: right;
+margin-right: 20px;
+margin-top: 10px; /* Réduire la marge supérieure pour remonter le bouton */
+}
+
+.button-filtre .filtrer-button {
+border: none;
+border-radius: 10px;
+padding: 15px 30px; /* Augmenter le padding pour rendre le bouton plus gros */
+font-size: 18px; /* Augmenter la taille de la police */
+background-color: #28a745;
+color: white;
+cursor: pointer;
+}
+
+.button-filtre .filtrer-button:hover {
+background-color: #218838;
+}
+
+/*bouton filtre*/
+.modal-toggle {
+display: none;
+}
+
+.modal {
+  display: none; /* Cache l'élément par défaut, il ne sera visible que lorsqu'il sera activé */
+  position: fixed; /* Positionne l'élément par rapport à la fenêtre, même en cas de défilement */
+  z-index: 1000; /* Place l'élément au-dessus des autres grâce à une priorité élevée */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+background-color: #fff;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* La largeur de l'élément est fixée à 80% de la largeur de son conteneur parent */
+max-width: 400px; /* La largeur maximale est limitée à 400px pour éviter qu'elle ne devienne trop grande */
+border-radius: 10px; /* Ajoute des coins arrondis pour un design plus moderne et agréable */
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ajoute une ombre autour de l'élément :
+                                              - 0 : Pas de décalage horizontal.
+                                              - 5px : Décalage vertical de 5 pixels.
+                                              - 15px : Rayon de flou pour l'ombre.
+                                              - rgba(0, 0, 0, 0.3) : Couleur noire avec une opacité de 30% pour un effet subtil. */
+text-align: left; /* Aligner le texte à gauche */
+padding: 20px; /* Ajouter un peu de padding pour l'espacement interne */
+}
+
+.radio-group {
+display: flex; /* Utiliser flexbox pour aligner les éléments en ligne */
+align-items: center; /* Aligner les éléments au centre verticalement */
+gap: 10px; /* Ajouter un espace entre les éléments */
+}
+
+.radio-group input[type="radio"],
+.radio-group label {
+margin: 0; /* Supprimer les marges par défaut */
+}
+
+.close-button {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+/* position: absolute;*/
+cursor: pointer;
+}
+
+.close-button:hover, .close-button:focus {
+color: black;
+text-decoration: none;
+}
+
+.modal-toggle:checked + .modal {
+display: flex;
+}
+
+h1 {
+text-align: center;
+font-size: 30px; /* Augmenter la taille de la police */
+margin-top: 20px; /* Ajouter une marge supérieure si nécessaire */
+}
+
+.menu-section {
+margin-bottom: 40px;
+}
+
+.menu-section h2 {
+font-size: 24px; /* Augmenter la taille de la police */
+margin-bottom: 10px;
+margin-left: 20px; /* Déplacer un peu plus à droite */
+}
+
+.menu-items {
+display: flex;
+flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne suivante */
+gap: 20px; /* Espace entre les éléments */
+padding: 10px;
+overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+}
+
+.menu-item {
+flex: 0 0 auto; /* Empêche les éléments de se redimensionner */
+width: calc(15% - 20px); /* Ajuste la largeur des éléments pour qu'ils soient sur la même ligne */
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 10px;
+text-align: center;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+height: 250px;
+}
+
+.item-link {
+  width: 100%;
+  height: 100%;
+}
+
+.item-photo {
+  width: 100%;
+  height: 200px; /* Augmenter la hauteur pour que le cadre gris prenne plus de place */
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden; /* Assurez-vous que l'image ne dépasse pas les bords */
+}
+
+.item-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image couvre toute la boîte grise */
+  border-radius: 4px; /* Assurez-vous que l'image a les mêmes coins arrondis que la boîte grise */
+}
+
+.item-photo img:hover {
+  transform: scale(1.2);
+}
+
+.item-info p {
+margin: 5px 0;
+font-size: 14px;
+}
+
+/**************************page formules*************************************/
+.container_F {
+display: flex;
+flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+gap: 20px; /* Espace entre les divs */
+justify-content: center; /* Aligner les éléments à gauche */
+margin: 0 auto; /* Centrer le conteneur lui-même */
+width: 80%; /* Ajustez la largeur selon vos besoins */
+}
+
+.formule_4 {
+display: block;
+justify-content: space-between; /* Espace entre les éléments */
+align-items: center; /* Aligner les éléments au centre verticalement */
+border: 1px solid #ccc; /* Bordure pour chaque div */
+padding: 20px; /* Espacement interne */
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour chaque div */
+background-color: #f9f9f9; /* Couleur de fond */
+border-radius: 10px;
+cursor: pointer;
+transition: transform 0.3s ease-in-out; /* Ajoute une transition pour l'effet de survol */
+width: 80%; /* Ajustez la largeur selon vos besoins */
+height: auto;
+margin: 20px auto;
+margin-right: 20px;
+}
+
+.formule_4 p {
+margin: 0; /* Supprimer les marges par défaut */
+flex-grow: 1; /* Permet au paragraphe de prendre tout l'espace disponible */
+}
+
+.formule_4:hover {
+transform: scale(1.20); 
+}
+
+.price {
+margin-left: auto; /* Pousser le prix à droite */
+font-weight: bold; /* Optionnel : mettre le texte en gras */
+}
+
+/************************Page descriptif du produit****************************/
+.product-titre {
+text-align: center;
+width: 100%;
+font-size: 24px;
+margin-top: 20px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.product-photo-price {
+display: flex;
+align-items: flex-start; /* Centre verticalement */
+}
+
+.product-photo {
+width: 300px;
+height: 300px;
+background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+color:black;
+border: 1px solid #ddd;
+margin-top: 30px;
+margin-left: 300px;
+margin-right: 30px;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image couvre toute la boîte blanche sans déformer l'image */
+  border-radius: 8px; /* Assurez-vous que l'image a les mêmes coins arrondis que la boîte blanche */
+}
+
+.product-price-details {
+display: flex;
+flex-direction: column;
+font-weight: bold;
+font-size: 18px;
+}
+
+.product-price {
+font-weight: bold; /* Optionnel : mettre le texte en gras */
+margin-bottom: 10px; /* Espace entre le prix et les détails */
+font-size: 18px;
+}
+
+.product-details-block {
+margin-top: 10px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.actions {
+margin-top: 20px; /* Ajustez cette valeur selon vos besoins */
+font-weight: bold;
+margin-left: 310px;
+}
+
+.descriptif {
+margin-top: 10px; /* Ajustez cette valeur pour remonter la section */
+font-weight: bold;
+font-size: 18px;
+}
+
+.commentaires {
+color: black; 
+display: flex;
+flex-direction: column; /* Affiche les commentaires en colonne */
+align-items: center; /* Centre les commentaires sous le titre */
+gap: 15px;
+padding: 10px;
+width: 100%; /* S'assure que ça prend toute la largeur */
+}
+
+.comments-list {
+width: 50%; /* Ajuste la largeur */
+max-width: 600px; /* Empêche que ça soit trop large */
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 10px;
+text-align: left;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/*************************************Page paiement*************************************/
+.products {
+width: 50%;
+padding: 20px;
+background: white;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-item {
+display: flex;
+align-items: center;
+gap: 20px;
+margin: 10px 0; /*l'élément aura un espace vertical (haut et bas) de 10 pixels, mais aucun espace horizontal (gauche et droite).*/
+}
+
+.product-image {
+width: 80px;
+height: 80px;
+background-color: #ddd;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/******************************************Page panier**********************************/
+.container-panier {
+position: relative; /* Assurez-vous que le conteneur parent a une position relative */
+}
+
+.box-product-box {
+position: relative;
+width: 50%; /* Définir la largeur à 50% */
+margin-left: 0; /* Positionner à gauche */
+margin-top: 20px; /* Optionnel : pour ajouter un peu d'espace en haut */
+margin-bottom: 20px; /* Optionnel : pour ajouter un peu d'espace en bas */
+display: flex;
+flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne suivante */
+gap: 20px; /* Espace entre les éléments */
+padding: 10px;
+overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+}
+
+.product-box {
+position: relative;
+width: 100%; /* Définir la largeur à 100% de la boîte parent */
+margin-top: 10px; /* Ajouter un peu d'espace en haut */
+display: flex;
+gap: 20px; /* Espace entre les éléments */
+padding: 10px;
+}
+
+.photo {
+width: 150px;
+height: 150px;
+background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+color:black;
+border: 1px solid #ddd;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+border-radius: 8px;
+}
+
+.photo img {
+  width: 150px; /* Laisse l'image s'adapter proportionnellement */
+  height: 150px; /* L'image occupe toute la hauteur du conteneur */
+  object-fit: contain; /* L'image s'adapte sans être coupée ni déformée */
+  border-radius: 8px; /* Les coins de l'image suivent ceux du conteneur */
+}
+
+.total-box {
+position: absolute;
+top: 20px; /* Ajustez cette valeur selon vos besoins */
+right: 20px; /* Ajustez cette valeur selon vos besoins */
+padding: 10px;
+width: 25%; /* Définir la largeur à 45% pour s'aligner à droite */  
+margin-top: 20px; /* Optionnel : pour ajouter un peu d'espace en haut */
+}
+
+.button-box {
+position: absolute;
+top: 260px; /* Ajustez cette valeur selon vos besoins */
+right: 20px; /* Ajustez cette valeur selon vos besoins */
+width: 25%; /* Définir une largeur appropriée */
+padding: 10px;
+margin-top: 20px;
+}
+
+.button-box button {
+width: 80%; /* Ajustez cette valeur selon vos besoins */
+margin-bottom: 10px; /* Ajouter un espace entre les boutons */
+}
+
+
+
+/*******************************************Page User/Admin*************************************/
+/* Centrer la section Mon compte et Admin*/
+.account-container {
+text-align: center;
+margin-top: 10px;
+}
+
+.account-container button {
+width: 200px;
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #ccc;
+background-color: #f8f8f8;
+font-size: 16px;
+cursor: pointer;
+margin-bottom: 20px;
+margin-top: 30px;
+}
+
+.account {
+  margin-top: 25px;
+}
+.space {
+margin-top: 100px;
+}
+
+/* Ajustement de la navbar pour l'icône panier */
+nav ul {
+display: flex;
+align-items: center;
+}
+
+nav ul .spacer {
+flex-grow: 1;
+}
+
+.cart-icon {
+width: 24px;
+height: 24px;
+}
+/**********************************************Page Admin_produit*************************/
+
+.main_admin_produit {
+  background-image: url('images/background3.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button-ajout-suppression-prod {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-ajout-suppression-prod .btn {
+  background-color: #218838; 
+  border: none;
+  color: white;
+  padding: 20px 40px; /* Augmenter la taille des boutons */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px; /* Augmenter la taille de la police */
+  margin: 10px; /* Ajouter de l'espace entre les boutons */
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button-ajout-suppression-prod .btn:hover {
+  background-color: #218838;
+}
+
+/****************************************Admin_Ajout_Produit****************************/
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.radio-container input {
+  margin-right: 10px;
+}
+
+/***************************************Lien Carte-Produit*****************************/
+/* Styles pour le bouton avec image */
+.button-to-product {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.product-button-image {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.product-button-image:hover {
+  transform: scale(1.1);
+}
