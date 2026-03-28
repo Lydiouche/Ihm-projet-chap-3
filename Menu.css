@@ -1,0 +1,85 @@
+﻿/* 1. Reset important */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* 2. La barre de navigation (le conteneur bleu) */
+.navbar {
+    background-color: #87CEEB;
+    width: 100%;
+    /* On s'assure que la navbar elle-même n'a pas de contraintes */
+}
+
+/* 3. La liste des éléments (C'est ICI qu'on centre) */
+.menu-list {
+    display: flex; /* On utilise Flexbox */
+    justify-content: center; /* CENTRE horizontalement les items */
+    align-items: center; /* CENTRE verticalement les items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 60px; /* Hauteur de ta barre */
+}
+
+/* 4. Chaque item du menu */
+.menu-item {
+    padding: 0 30px; /* Espace à gauche et à droite du texte */
+    height: 100%; /* Pour que le fond bleu foncé prenne toute la hauteur */
+    display: flex;
+    align-items: center; /* Centre le texte dans le rectangle */
+    cursor: pointer;
+    font-size: 18px;
+    font-family: serif; /* Pour coller à ton image */
+    transition: all 0.2s ease;
+}
+
+    /* 5. État au survol */
+    .menu-item:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    /* 6. L'ÉLÉMENT ACTIF */
+    .menu-item.active {
+        background-color: #1a6d8c;
+        color: black; /* Texte noir sur fond foncé comme l'image */
+    }
+
+/* 7. Conteneur de contenu principal */
+.content-container {
+    max-width: 1200px; /* Évite que le texte soit trop large sur grand écran */
+    margin: 40px auto; /* Centre le bloc et ajoute de l'espace en haut */
+    padding: 0 20px;
+    line-height: 1.6; /* Améliore la lisibilité du texte */
+    color: #333;
+}
+
+/* 8. Style spécifique pour le bloc des maladies */
+.maladies-moment {
+    background-color: #f9f9f9;
+    border-left: 5px solid #87CEEB; /* Rappel du bleu de la navbar */
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.maladies-moment h2 {
+    margin-top: 0;
+    color: #1a6d8c; /* Rappel de la couleur active */
+    font-family: serif;
+}
+
+.maladies-moment ul {
+    list-style: none;
+    padding: 0;
+}
+
+.maladies-moment li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.maladies-moment li:last-child {
+    border-bottom: none;
+}
