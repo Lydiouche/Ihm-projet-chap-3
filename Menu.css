@@ -1,4 +1,4 @@
-﻿/* 1. Reset important */
+/* 1. Reset important */
 body {
     margin: 0;
     padding: 0;
@@ -9,77 +9,124 @@ body {
 .navbar {
     background-color: #87CEEB;
     width: 100%;
-    /* On s'assure que la navbar elle-même n'a pas de contraintes */
 }
 
-/* 3. La liste des éléments (C'est ICI qu'on centre) */
+/* 3. La liste des éléments */
 .menu-list {
-    display: flex; /* On utilise Flexbox */
-    justify-content: center; /* CENTRE horizontalement les items */
-    align-items: center; /* CENTRE verticalement les items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    height: 60px; /* Hauteur de ta barre */
+    height: 60px;
 }
 
 /* 4. Chaque item du menu */
 .menu-item {
-    padding: 0 30px; /* Espace à gauche et à droite du texte */
-    height: 100%; /* Pour que le fond bleu foncé prenne toute la hauteur */
+    padding: 0 30px;
+    height: 100%;
     display: flex;
-    align-items: center; /* Centre le texte dans le rectangle */
+    align-items: center;
     cursor: pointer;
     font-size: 18px;
-    font-family: serif; /* Pour coller à ton image */
+    font-family: serif;
     transition: all 0.2s ease;
 }
 
-    /* 5. État au survol */
-    .menu-item:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
+.menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
-    /* 6. L'ÉLÉMENT ACTIF */
-    .menu-item.active {
-        background-color: #1a6d8c;
-        color: black; /* Texte noir sur fond foncé comme l'image */
-    }
+.menu-item.active {
+    background-color: #1a6d8c;
+    color: white;
+}
 
-/* 7. Conteneur de contenu principal */
+/* 5. Conteneur de contenu principal */
 .content-container {
-    max-width: 1200px; /* Évite que le texte soit trop large sur grand écran */
-    margin: 40px auto; /* Centre le bloc et ajoute de l'espace en haut */
+    max-width: 1200px;
+    margin: 40px auto;
     padding: 0 20px;
-    line-height: 1.6; /* Améliore la lisibilité du texte */
+    line-height: 1.6;
     color: #333;
 }
 
-/* 8. Style spécifique pour le bloc des maladies */
-.maladies-moment {
+/* 6. STYLE SPÉCIFIQUE ACCUEIL (ALIGNE À GAUCHE) */
+.home-content {
+    text-align: left; /* Aligne tout le texte à gauche */
+}
+
+.home-content ul {
+    padding-left: 20px; /* Redonne de l'espace pour les puces */
+    list-style-position: inside;
+}
+
+/* 7. Style des blocs de contenu */
+.maladies-moment, .maladie-detail-box, .health-tips {
     background-color: #f9f9f9;
-    border-left: 5px solid #87CEEB; /* Rappel du bleu de la navbar */
+    border-left: 5px solid #87CEEB;
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    text-align: left; /* Sécurité pour les blocs */
 }
 
-.maladies-moment h2 {
+.title-serif {
     margin-top: 0;
-    color: #1a6d8c; /* Rappel de la couleur active */
+    color: #1a6d8c;
     font-family: serif;
 }
 
-.maladies-moment ul {
-    list-style: none;
-    padding: 0;
+/* 8. Boutons */
+.back-button {
+    background-color: #87CEEB;
+    color: #1a6d8c;
+    border: 2px solid #1a6d8c;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: serif;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
 }
 
-.maladies-moment li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.maladies-moment li:last-child {
-    border-bottom: none;
+/* 9. Grilles */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-card, .maladie-item {
+    padding: 25px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: serif;
+    text-align: center; /* On garde le centre pour les cartes uniquement */
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
 }
