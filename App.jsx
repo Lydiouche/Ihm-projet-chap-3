@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, use } from 'react';
 import './Menu.css';
 import dataInitiales from './data.json'; 
 
@@ -11,7 +11,7 @@ const MenuItem = ({ label, active, onClick }) => {
 };
 
 const Menu = () => {
-    const categories = ['Accueil', 'Les maladies', 'Modification des données'];
+    const categories = ['Accueil', 'Les maladies', 'Parametrage'];
 
     // 1. Gestion de l'onglet actif avec persistance
     const [selectedIndex, setSelectedIndex] = useState(() => {
@@ -29,7 +29,7 @@ const Menu = () => {
     const [selectedCategorie, setSelectedCategorie] = useState(null); 
     const [selectedMaladie, setSelectedMaladie] = useState(null);
 
-    // Sauvegarde automatique des changements (onglet et données)
+   // Sauvegarde automatique des changements (onglet et données)
     useEffect(() => {
         localStorage.setItem('menuIndex', selectedIndex);
         localStorage.setItem('maCollectionMaladies', JSON.stringify(maladies));
@@ -43,16 +43,168 @@ const Menu = () => {
         if (confirmation) {
             setMaladies(maladies.filter(m => m.id !== id));
             setSelectedMaladie(null);
+            setModeEdition(false);
         }
     };
+///////////////////////////////////////////////////////////////////::::::
+    //Formulaire ajout maladie
+    const [formulaire, setFormulaire] = useState({
+        nom: '',
+        categorie: '',
+        symptomes: '',
+        public_affecte: '',
+        type_maladie: '',
+        est_eteinte: false,
+        survie: '',
+        traitements: ''
+    });
+
+////////////////////////////////////////////////////////////////:://////    
+    //modif de maladie
+    const [modeEdition, setModeEdition] = useState(false);
+    const [formEdition, setFormEdition] = useState({
+    id: '',
+    nom: '',
+    categorie: '',
+    symptomes: '',
+    public_affecte: '',
+    type_maladie: '',
+    est_eteinte: false,
+    survie: '',
+    traitements: ''
+});
+
 
     // FONCTION POUR REMETTRE LES MALADIES SUPPRIMÉES
     const restaurerDonnees = () => {
         if (window.confirm("Voulez-vous restaurer toutes les maladies supprimées ?")) {
             setMaladies(dataInitiales);
+            setSelectedMaladie(null);
+            setSelectedCategorie(null);
+            setModeEdition(false);
             alert("La collection a été remise à zéro !");
         }
     };
+
+    //Fonction modif de maladie
+    const modifEdition = (maladie) => {
+        setFormEdition({
+            id: maladie.id,
+            nom: maladie.nom,
+            categorie: maladie.categorie,
+            symptomes: maladie.symptomes.join(', '),
+            public_affecte: maladie.public_affecte,
+            type_maladie: maladie.type_maladie || '',
+            est_eteinte: maladie.est_eteinte,
+            survie: maladie.survie,
+            traitements: maladie.traitements.join(', ')
+        });
+        setModeEdition(true);
+    };
+
+    const sauvegarderModification = (e) => {
+        e.preventDefault();
+
+        if (
+            !formEdition.nom.trim() ||
+            !formEdition.categorie.trim() ||
+            !formEdition.symptomes.trim() ||
+            !formEdition.public_affecte.trim() ||
+            !formEdition.survie.trim() ||
+            !formEdition.traitements.trim()
+        ) {
+            alert("Merci de remplir tous les champs obligatoires.");
+            return;
+        }
+
+        const maladieModifiee = {
+            ...selectedMaladie,
+            id: formEdition.id,
+            nom: formEdition.nom.trim(),
+            categorie: formEdition.categorie.trim(),
+            symptomes: formEdition.symptomes
+                .split(',')
+                .map(s => s.trim())
+                .filter(Boolean),
+            public_affecte: formEdition.public_affecte.trim(),
+            type_maladie: formEdition.type_maladie.trim(),
+            est_eteinte: formEdition.est_eteinte,
+            survie: formEdition.survie.trim(),
+            traitements: formEdition.traitements
+                .split(',')
+                .map(t => t.trim())
+                .filter(Boolean),
+        };
+        //dessous = copilot,
+        //setMaladies(maladies.map(m => m.id === maladieModifiee.id ? maladieModifiee : m));
+        const nouvellesMaladies = maladies.map(m =>
+            m.id === formEdition.id ? maladieModifiee : m);
+        
+            setMaladies(nouvellesMaladies);
+        setSelectedMaladie(maladieModifiee);
+        setModeEdition(false);
+        alert("Maladie modifiée avec succès !");
+    };
+
+    // FONCTION POUR AJOUTER UNE MALADIE
+    const ajouterMaladie = (e) => {
+        e.preventDefault();
+
+        if (
+        !formulaire.nom.trim() ||
+        !formulaire.categorie.trim() ||
+        !formulaire.symptomes.trim() ||
+        !formulaire.public_affecte.trim() ||
+        !formulaire.type_maladie.trim() ||
+        !formulaire.survie.trim() ||
+        !formulaire.traitements.trim()
+    ) {
+        alert("Merci de remplir tous les champs obligatoires.");
+        return;
+    }
+
+    const nouvelId = String(
+        Math.max(...maladies.map(m => Number(m.id)), 0) + 1
+    );
+
+    const nouvelleMaladie = {
+        id: nouvelId,
+        nom: formulaire.nom.trim(),
+        categorie: formulaire.categorie.trim(),
+        symptomes: formulaire.symptomes
+            .split(',')
+            .map(s => s.trim())
+            .filter(Boolean),
+        public_affecte: formulaire.public_affecte.trim(),
+        type_maladie: formulaire.type_maladie.trim(),
+        est_eteinte: formulaire.est_eteinte,
+        survie: formulaire.survie.trim(),
+        traitements: formulaire.traitements
+            .split(',')
+            .map(t => t.trim())
+            .filter(Boolean),
+    };
+
+    setMaladies([...maladies, nouvelleMaladie]);
+
+    setFormulaire({
+        nom: '',
+        categorie: '',
+        symptomes: '',
+        public_affecte: '',
+        type_maladie: '',
+        est_eteinte: false,
+        survie: '',
+        traitements: '',
+    });
+
+    alert("Maladie ajoutée avec succès !");
+};
+
+
+
+
+
 
     return (
         <div>
@@ -150,13 +302,28 @@ const Menu = () => {
                         )}
 
                         {selectedMaladie && (
+
                             <div className="maladie-detail-box">
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                     {/* BOUTON RETOUR CLASSIQUE */}
                                     <button onClick={() => setSelectedMaladie(null)} className="back-button">
                                         ← Retour à la liste
                                     </button>
-                                    
+
+                                    {/* BOUTON MODIFIER STYLE RETOUR MAIS GRIS */}
+                                    <button 
+                                        onClick={() => 
+                                            modifEdition(selectedMaladie)
+                                            //modifEdition
+                                            //setModeEdition(true);
+                                            //setFormEdition(selectedMaladie);
+                                        }
+                                        className="back-button"
+                                        style={{ backgroundColor: '#95a5a6', borderColor: '#7f8c8d', color: 'white' }}
+                                    >
+                                        Modifier cette maladie
+                                    </button>
+
                                     {/* BOUTON SUPPRIMER STYLE RETOUR MAIS ROUGE */}
                                     <button 
                                         onClick={() => supprimerMaladie(selectedMaladie.id)} 
@@ -166,7 +333,78 @@ const Menu = () => {
                                         Supprimer cette maladie
                                     </button>
                                 </div>
-                                
+
+                                {/*formulaire de modification*/}
+                                {modeEdition && (   
+                                <div className="admin_page">
+                                    <h3>Modifier :{selectedMaladie.nom}</h3>
+                                    <form onSubmit={sauvegarderModification} className="add-form" style={{ display: 'grid', gap: '15px', marginBottom: '30px' }}>
+                                        <label>Nom de la maladie</label>
+                                        <input
+                                            type="text"
+                                            value={formEdition.nom}
+                                            onChange={(e) => setFormEdition({...formEdition, nom: e.target.value})}
+                                        />
+                                        <label>Catégorie</label>
+                                        <input
+                                            type="text"
+                                            value={formEdition.categorie}
+                                            onChange={(e) => setFormEdition({...formEdition, categorie: e.target.value})}
+                                        />
+                                        <label>Public affecté</label>
+                                        <input
+                                            type="text"
+                                            value={formEdition.public_affecte}
+                                            onChange={(e) => setFormEdition({...formEdition, public_affecte: e.target.value})}
+                                        />
+                                        <label>Survie</label>
+                                        <input
+                                            type="text"
+                                            value={formEdition.survie}
+                                            onChange={(e) => setFormEdition({...formEdition, survie: e.target.value})}
+                                        />
+                                        <label>Symptômes (séparés par des virgules)</label>
+                                        <input
+                                            type="text"
+                                            value={formEdition.symptomes}
+                                            onChange={(e) => setFormEdition({...formEdition, symptomes: e.target.value})}
+                                        />
+                                        <label>Traitements (séparés par des virgules)</label>
+                                        <input
+                                            type="text"
+                                            value={formEdition.traitements}
+                                            onChange={(e) => setFormEdition({...formEdition, traitements: e.target.value})}
+                                        />
+                                        <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                            <input
+                                                type="checkbox"
+                                                checked={formEdition.est_eteinte}
+                                                onChange={(e) => setFormEdition({...formEdition, est_eteinte: e.target.checked})}
+                                            />
+                                            Maladie éteinte
+                                        </label>
+
+                                        <div style={{ display: 'flex', gap: '15px' }}>
+                                            <button
+                                                type="submit"
+                                                className="back-button"
+                                                style={{ backgroundColor: '#2ecc71', borderColor: '#27ae60', color: 'white' }}
+                                            >
+                                                Sauvegarder les modifications
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setModeEdition(false)}
+                                                className="back-button"
+                                                style={{ backgroundColor: '#95a5a6', borderColor: '#7f8c8d', color: 'white' }}
+                                            >
+                                                Annuler
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                )}
+
                                 <h2 className="title-serif" style={{ fontSize: '2em', marginTop: '20px' }}>{selectedMaladie.nom}</h2>
                                 
                                 <div className="detail-content" style={{ textAlign: 'left', marginTop: '20px' }}>
@@ -201,8 +439,79 @@ const Menu = () => {
                 {/* --- PAGE MODIFICATION --- */}
                 {selectedIndex === 2 && (
                     <div className="admin-page">
-                        <h2 className="title-serif">Modification des données</h2>
+                        <h2 className="title-serif">Paramétrage</h2>
                         <div className="maladies-moment" style={{ textAlign: 'left', padding: '40px' }}>
+                            <h3>Ajouter une nouvelle maladie</h3>
+                            <form onSubmit={ajouterMaladie} className="add-form" style={{ display: 'grid', gap: '15px'}}>
+                                <input
+                                    type="text"
+                                    placeholder="Nom de la maladie"
+                                    value={formulaire.nom}
+                                    onChange={(e) => setFormulaire({...formulaire, nom: e.target.value})}
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Catégorie"
+                                    value={formulaire.categorie}
+                                    onChange={(e) => setFormulaire({...formulaire, categorie: e.target.value})}
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Public affecté"
+                                    value={formulaire.public_affecte}
+                                    onChange={(e) => setFormulaire({...formulaire, public_affecte: e.target.value})}
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Type de maladie"
+                                    value={formulaire.type_maladie}
+                                    onChange={(e) => setFormulaire({...formulaire, type_maladie: e.target.value})}
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Pronostic/Survie"
+                                    value={formulaire.survie}
+                                    onChange={(e) => setFormulaire({...formulaire, survie: e.target.value})}
+                                />                                
+
+                                <input
+                                    type="text"
+                                    placeholder="Symptômes (séparés par des virgules)"
+                                    value={formulaire.symptomes}
+                                    onChange={(e) => setFormulaire({...formulaire, symptomes: e.target.value})}
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Traitements (séparés par des virgules)"
+                                    value={formulaire.traitements}
+                                    onChange={(e) => setFormulaire({...formulaire, traitements: e.target.value})}
+                                />
+
+                                <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <input
+                                        type="checkbox"
+                                        checked={formulaire.est_eteinte}
+                                        onChange={(e) => setFormulaire({...formulaire, est_eteinte: e.target.checked})}
+                                    />
+                                    Maladie éteinte
+                                </label>
+
+                                <button
+                                    type="submit"
+                                    className="back-button"
+                                    style={{ backgroundColor: '#2ecc71', borderColor: '#27ae60', color: 'white', width: 'fit-content' }}
+                                >
+                                    Ajouter la maladie
+                                </button>
+                            </form>
+                        </div>
+
+                        <div className="maladies-moment" style={{ textAlign: 'center', padding: '40px' }}>
                             <p>Vous avez supprimé des éléments par erreur ?</p>
                             <button 
                                 onClick={restaurerDonnees} 

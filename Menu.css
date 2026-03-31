@@ -130,3 +130,39 @@ body {
     gap: 20px;
     margin-top: 20px;
 }
+
+/*CSS ajout produit*/
+.admin-page input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.admin-page form label {
+    font-family: serif;
+    color: #333;
+}
+
+/*CSS modif produit*/
+.edit-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.edit-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.edit-form label {
+    font-family: serif;
+    color: #333;
+}
