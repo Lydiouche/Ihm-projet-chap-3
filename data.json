@@ -8,7 +8,8 @@
     "type_maladie": "Saisonnière",
     "est_eteinte": false,
     "survie": "Excellente (7 à 10 jours)",
-    "traitements": ["Repos", "Hydratation", "Paracétamol", "Vaccin annuel"]
+    "traitements": ["Repos", "Hydratation", "Paracétamol", "Vaccin annuel"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "2",
@@ -19,7 +20,8 @@
     "type_maladie": "Chronique",
     "est_eteinte": false,
     "survie": "Longue durée avec suivi",
-    "traitements": ["Rééquilibrage alimentaire", "Activité physique", "Antidiabétiques oraux", "Insuline"]
+    "traitements": ["Rééquilibrage alimentaire", "Activité physique", "Antidiabétiques oraux", "Insuline"],
+    "image" : "endocrinien.jpg"
   },
   {
     "id": "3",
@@ -30,7 +32,8 @@
     "type_maladie": "Épidémique",
     "est_eteinte": true,
     "survie": "30% de létalité historique",
-    "traitements": ["Éradiquée par la vaccination"]
+    "traitements": ["Éradiquée par la vaccination"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "4",
@@ -41,7 +44,8 @@
     "type_maladie": "Chronique / Inflammatoire",
     "est_eteinte": false,
     "survie": "Indéfinie (gêne quotidienne)",
-    "traitements": ["Dermocorticoïdes", "Émollients", "Éviction des allergènes"]
+    "traitements": ["Dermocorticoïdes", "Émollients", "Éviction des allergènes"],
+    "image" : "dermatologique.jpg"
   },
   {
     "id": "5",
@@ -52,7 +56,8 @@
     "type_maladie": "Neurodégénérative",
     "est_eteinte": false,
     "survie": "8 à 10 ans après diagnostic",
-    "traitements": ["Accompagnement cognitif", "Aide à domicile", "Traitements symptomatiques"]
+    "traitements": ["Accompagnement cognitif", "Aide à domicile", "Traitements symptomatiques"],
+    "image" : "neurologie.jpg"
   },
   {
     "id": "6",
@@ -63,7 +68,8 @@
     "type_maladie": "Orpheline / Rare",
     "est_eteinte": false,
     "survie": "Espérance de vie ~40-50 ans",
-    "traitements": ["Kinésithérapie respiratoire", "Antibiotiques", "Correcteurs de la protéine CFTR"]
+    "traitements": ["Kinésithérapie respiratoire", "Antibiotiques", "Correcteurs de la protéine CFTR"],
+    "image" : "genetique.jpg"
   },
   {
     "id": "7",
@@ -74,7 +80,8 @@
     "type_maladie": "Saisonnière / Virale",
     "est_eteinte": false,
     "survie": "Excellente (2 à 5 jours)",
-    "traitements": ["Réhydratation", "Régime antidiarrhéique", "Antispasmodiques"]
+    "traitements": ["Réhydratation", "Régime antidiarrhéique", "Antispasmodiques"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "8",
@@ -85,7 +92,8 @@
     "type_maladie": "Auto-immune / Chronique",
     "est_eteinte": false,
     "survie": "Indéfinie",
-    "traitements": ["Photothérapie", "Traitements locaux", "Biothérapies"]
+    "traitements": ["Photothérapie", "Traitements locaux", "Biothérapies"],
+    "image" : "dermatologique.jpg"
   },
   {
     "id": "9",
@@ -96,7 +104,8 @@
     "type_maladie": "Héréditaire / Rare",
     "est_eteinte": false,
     "survie": "Longue avec traitement substitutif",
-    "traitements": ["Injection de facteurs de coagulation"]
+    "traitements": ["Injection de facteurs de coagulation"],
+    "image" : "hematologique.jpg"
   },
   {
     "id": "10",
@@ -107,7 +116,8 @@
     "type_maladie": "Rare / Récurrente",
     "est_eteinte": false,
     "survie": "Fatale sans traitement, excellente avec",
-    "traitements": ["Antibiotiques (Streptomycine)"]
+    "traitements": ["Antibiotiques (Streptomycine)"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "11",
@@ -118,7 +128,8 @@
     "type_maladie": "Chronique",
     "est_eteinte": false,
     "survie": "Indéfinie avec suivi",
-    "traitements": ["Lévothyroxine (Hormones de synthèse)"]
+    "traitements": ["Lévothyroxine (Hormones de synthèse)"],
+    "image" : "endocrinien.jpg"
   },
   {
     "id": "12",
@@ -129,7 +140,8 @@
     "type_maladie": "Cancéreuse",
     "est_eteinte": false,
     "survie": "Dépend du stade de détection",
-    "traitements": ["Chirurgie", "Immunothérapie", "Chimiothérapie"]
+    "traitements": ["Chirurgie", "Immunothérapie", "Chimiothérapie"],
+    "image" : "dermatologique.jpg"
   },
   {
     "id": "13",
@@ -140,7 +152,8 @@
     "type_maladie": "Inflammatoire chronique (MICI)",
     "est_eteinte": false,
     "survie": "Indéfinie",
-    "traitements": ["Immunosuppresseurs", "Régime spécifique", "Chirurgie"]
+    "traitements": ["Immunosuppresseurs", "Régime spécifique", "Chirurgie"],
+    "image" : "digestive.jpg"
   },
   {
     "id": "14",
@@ -151,7 +164,8 @@
     "type_maladie": "Saisonnière",
     "est_eteinte": false,
     "survie": "Excellente (5 à 7 jours)",
-    "traitements": ["Antibiotiques (si bactérienne)", "Antalgiques"]
+    "traitements": ["Antibiotiques (si bactérienne)", "Antalgiques"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "15",
@@ -162,7 +176,8 @@
     "type_maladie": "Chronique",
     "est_eteinte": false,
     "survie": "Longue avec contrôle",
-    "traitements": ["Bronchodilatateurs", "Corticoïdes inhalés"]
+    "traitements": ["Bronchodilatateurs", "Corticoïdes inhalés"],
+    "image" : "respiratoire.jpg"
   },
   {
     "id": "16",
@@ -173,7 +188,8 @@
     "type_maladie": "Chronique",
     "est_eteinte": false,
     "survie": "Indéfinie avec gestion",
-    "traitements": ["Antihypertenseurs", "Réduction du sel", "Activité physique"]
+    "traitements": ["Antihypertenseurs", "Réduction du sel", "Activité physique"],
+    "image" : "cardiovasculaire.jpg"
   },
   {
     "id": "17",
@@ -184,7 +200,8 @@
     "type_maladie": "Liée au vieillissement",
     "est_eteinte": false,
     "survie": "Indéfinie",
-    "traitements": ["Injections intra-vitréennes", "Suppléments vitaminiques"]
+    "traitements": ["Injections intra-vitréennes", "Suppléments vitaminiques"],
+    "image" : "ophtalmologique.jpg"
   },
   {
     "id": "18",
@@ -195,7 +212,8 @@
     "type_maladie": "Virale",
     "est_eteinte": false,
     "survie": "Excellente",
-    "traitements": ["Repos strict", "Antalgiques", "Hydratation"]
+    "traitements": ["Repos strict", "Antalgiques", "Hydratation"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "19",
@@ -206,7 +224,8 @@
     "type_maladie": "Neurodégénérative",
     "est_eteinte": false,
     "survie": "Longue avec traitement",
-    "traitements": ["Lévodopa", "Rééducation", "Chirurgie neurologique"]
+    "traitements": ["Lévodopa", "Rééducation", "Chirurgie neurologique"],
+    "image" : "neurologie.jpg"
   },
   {
     "id": "20",
@@ -217,7 +236,8 @@
     "type_maladie": "Héréditaire",
     "est_eteinte": false,
     "survie": "50 à 60 ans en moyenne",
-    "traitements": ["Transfusions", "Hydratation", "Hydroxyurée"]
+    "traitements": ["Transfusions", "Hydratation", "Hydroxyurée"],
+    "image" : "genetique.jpg"
   },
   {
     "id": "21",
@@ -228,7 +248,8 @@
     "type_maladie": "Chronique / Systémique",
     "est_eteinte": false,
     "survie": "Longue avec suivi",
-    "traitements": ["Antipaludéens de synthèse", "Corticostéroïdes"]
+    "traitements": ["Antipaludéens de synthèse", "Corticostéroïdes"],
+    "image" : "auto_immune.jpg"
   },
   {
     "id": "22",
@@ -239,7 +260,8 @@
     "type_maladie": "Virale / Courante",
     "est_eteinte": false,
     "survie": "Excellente (3 à 5 jours)",
-    "traitements": ["Lavage de nez", "Hydratation", "Repos"]
+    "traitements": ["Lavage de nez", "Hydratation", "Repos"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "23",
@@ -250,7 +272,8 @@
     "type_maladie": "Bactérienne",
     "est_eteinte": false,
     "survie": "Excellente avec soins",
-    "traitements": ["Antibiotiques", "Antalgiques"]
+    "traitements": ["Antibiotiques", "Antalgiques"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "24",
@@ -261,7 +284,8 @@
     "type_maladie": "Chronique",
     "est_eteinte": false,
     "survie": "Indéfinie",
-    "traitements": ["Collyres hypotenseurs", "Laser", "Chirurgie"]
+    "traitements": ["Collyres hypotenseurs", "Laser", "Chirurgie"],
+    "image" : "ophtalmologique.jpg"
   },
   {
     "id": "25",
@@ -272,7 +296,8 @@
     "type_maladie": "Auto-immune / Chronique",
     "est_eteinte": false,
     "survie": "Proche de la normale",
-    "traitements": ["Immunomodulateurs", "Rééducation", "Corticoïdes"]
+    "traitements": ["Immunomodulateurs", "Rééducation", "Corticoïdes"],
+    "image" : "neurologie.jpg"
   },
   {
     "id": "26",
@@ -283,7 +308,8 @@
     "type_maladie": "Inflammatoire",
     "est_eteinte": false,
     "survie": "Indéfinie",
-    "traitements": ["Isotrétinoïne", "Antibiotiques locaux", "Hygiène spécifique"]
+    "traitements": ["Isotrétinoïne", "Antibiotiques locaux", "Hygiène spécifique"],
+    "image" : "dermatologique.jpg"
   },
   {
     "id": "27",
@@ -294,7 +320,8 @@
     "type_maladie": "Bactérienne",
     "est_eteinte": false,
     "survie": "Excellente avec traitement long",
-    "traitements": ["Antibiothérapie combinée (6 mois)"]
+    "traitements": ["Antibiothérapie combinée (6 mois)"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "28",
@@ -305,7 +332,8 @@
     "type_maladie": "Virale",
     "est_eteinte": false,
     "survie": "Longue durée (risque cirrhose)",
-    "traitements": ["Antiviraux", "Vaccination préventive"]
+    "traitements": ["Antiviraux", "Vaccination préventive"],
+    "image" : "hepatique.jpg"
   },
   {
     "id": "29",
@@ -316,7 +344,8 @@
     "type_maladie": "Bactérienne / Historique",
     "est_eteinte": false,
     "survie": "Excellente avec traitement précoce",
-    "traitements": ["Polychimiothérapie (PCT)"]
+    "traitements": ["Polychimiothérapie (PCT)"],
+    "image" : "infectueuse.jpg"
   },
   {
     "id": "30",
@@ -327,6 +356,7 @@
     "type_maladie": "Chronique / Bactérienne",
     "est_eteinte": false,
     "survie": "Excellente avec soins",
-    "traitements": ["Inhibiteurs de la pompe à protons", "Antibiotiques"]
+    "traitements": ["Inhibiteurs de la pompe à protons", "Antibiotiques"],
+    "image" : "digestive.jpg"
   }
 ]
