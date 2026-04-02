@@ -135,8 +135,7 @@ const Menu = () => {
                 .map(t => t.trim())
                 .filter(Boolean),
         };
-        //dessous = copilot,
-        //setMaladies(maladies.map(m => m.id === maladieModifiee.id ? maladieModifiee : m));
+        
         const nouvellesMaladies = maladies.map(m =>
             m.id === formEdition.id ? maladieModifiee : m);
         
@@ -208,6 +207,9 @@ const Menu = () => {
 
     return (
         <div>
+            <nav className='Header'>
+                <h1>Suivi des maladies courantes</h1>
+            </nav>
             {/* BARRE DE NAVIGATION */}
             <nav className="navbar">
                 <ul className="menu-list">
@@ -258,7 +260,7 @@ const Menu = () => {
                                 <li><b>Distanciation :</b> Portez un masque en cas de symptômes grippaux.</li>
                             </ul>
                         </section>
-                        <section className="site-info">
+                        <section className="footer">
                             <h2>À propos de notre plateforme</h2>
                             <p>
                                 Ce site a été conçu pour offrir un suivi en temps réel de la situation sanitaire. 
