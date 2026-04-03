@@ -69,6 +69,7 @@ KADIRI-LEFEBVRE-TONNOIR/
 ├── package.json         # Dépendances et scripts de l'application
 ├── README.md            # Guide d'utilisation
 └── vite.config.js       # Configuration de l'outil de build
+```
 ## Utilisation
 Toutes les fonctions React doivent être en PascalCase.
 
