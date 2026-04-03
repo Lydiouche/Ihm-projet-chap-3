@@ -49,19 +49,21 @@ npm create vite@latest
 --> creation d'un projet react (il sera possible de le lancer plus tard par le biais de "npm run dev", a condition de respecter le chemin d'acces du projet).
 
 ## Arborescence
-Le projet React possède une arborescence bien spécifique : 
+
+Le projet React possède une arborescence bien spécifique :
+
 KADIRI-LEFEBVRE-TONNOIR/
 ├── src/
 │   ├── assets/          # Fichiers statiques (logos, etc.)
-│   ├── data/            # Dossier contenant les images des spécialités (.jpg)
-│   ├── App.jsx          # Composant principal (Logique de navigation et gestion d'état)
+│   ├── data/            # Images des spécialités (.jpg)
+│   ├── App.jsx          # Composant principal (Navigation et État)
 │   ├── App.css          # Styles généraux
-│   ├── Menu.css         # Styles spécifiques aux composants et à la grille
-│   ├── data.json        # Jeu de données minimal (JSON initial)
+│   ├── Menu.css         # Styles des composants et grille
+│   ├── data.json        # Jeu de données initial (JSON)
 │   └── main.jsx         # Point d'entrée React
 ├── index.html           # Structure HTML de base
-├── package.json         # Dépendances et scripts de l'application
-├── ReadME        
+├── package.json         # Dépendances et scripts
+├── README.md            # Guide d'utilisation
 └── vite.config.js       # Configuration de l'outil de build
 
 ## Utilisation
