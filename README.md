@@ -51,21 +51,24 @@ npm create vite@latest
 ## Arborescence
 
 Le projet React possède une arborescence bien spécifique :
+## Arborescence du projet
 
+Le projet React possède une arborescence structurée comme suit :
+
+```text
 KADIRI-LEFEBVRE-TONNOIR/
 ├── src/
 │   ├── assets/          # Fichiers statiques (logos, etc.)
 │   ├── data/            # Images des spécialités (.jpg)
-│   ├── App.jsx          # Composant principal (Navigation et État)
+│   ├── App.jsx          # Composant principal (Logique de navigation)
 │   ├── App.css          # Styles généraux
-│   ├── Menu.css         # Styles des composants et grille
-│   ├── data.json        # Jeu de données initial (JSON)
+│   ├── Menu.css         # Styles des composants et de la grille
+│   ├── data.json        # Jeu de données minimal (JSON initial)
 │   └── main.jsx         # Point d'entrée React
 ├── index.html           # Structure HTML de base
-├── package.json         # Dépendances et scripts
+├── package.json         # Dépendances et scripts de l'application
 ├── README.md            # Guide d'utilisation
 └── vite.config.js       # Configuration de l'outil de build
-
 ## Utilisation
 Toutes les fonctions React doivent être en PascalCase.
 
